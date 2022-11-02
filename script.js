@@ -2,11 +2,14 @@
 // 1行目に記載している 'use strict' は削除しないでください
 // const axios = require('axios');
 
+
+
 async function getPokemon () {
-    const response = await axios.get("https://pokeapi.co/api/v2/pokemon/25");
+    const num = Math.floor(Math.random()*29);
+    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${num}`)
+                                .catch(() => console.log("取得失敗！！！"));
     return response.data.sprites.other["official-artwork"].front_default;
 }
-console.log(getPokemon());
 
 window.addEventListener('load', () => {
     const containerEl = document.querySelector('#boughtBox');

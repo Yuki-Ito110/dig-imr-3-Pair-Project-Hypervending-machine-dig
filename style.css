@@ -44,6 +44,10 @@ h1 {
 }
 
 .drinks {
-    width: 29px;
+    width: 77px;
+}
+
+.drink {
+    display: inline-block;
 }
 
