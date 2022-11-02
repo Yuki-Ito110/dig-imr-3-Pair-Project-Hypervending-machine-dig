@@ -2,20 +2,27 @@
 
 image or gif
 
-## Overview
+## 概要
 
-## Requirement
+-
 
-## Usage
+## 必要条件
 
-## Features
+- Google Chrome
 
-## Reference
+## 使い方
 
-## Author
+-
 
-[twitter](https://twitter.com/Kotabrog)
+## 詳細仕様
 
-## Licence
+-
 
-[MIT](https://......)
+## 参考
+
+- [twitter](https://twitter.com/Kotabrog)
+
+## チーム
+
+- 自販機補充員-月収は 20 ～ 30 万円
+- ユーキさんとばら

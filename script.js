@@ -5,7 +5,7 @@
 
 
 async function getPokemon () {
-    const num = Math.floor(Math.random()*29);
+    const num = Math.floor(Math.random()*33) + 1;
     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${num}`)
                                 .catch(() => console.log("取得失敗！！！"));
     return response.data.sprites.other["official-artwork"].front_default;
@@ -31,15 +31,13 @@ window.addEventListener('load', () => {
     }
 
 
-    let postb = document.getElementById('postb');
+    let postb = document.getElementById('postB');
     postb.addEventListener('click', function() {
 
         getPokemon().then((url) => postImg(url));
         
         console.log('postがクリックされました！');
         // postImg("./images/コーラ.jpg");
-
-
     },false);
 
 });

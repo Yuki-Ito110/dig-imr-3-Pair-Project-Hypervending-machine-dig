@@ -29,6 +29,11 @@
         -ms-box-sizing: border-box;
     }   */
     /*ここから*/
+Body {
+    background-size:cover;
+    background-image: url("./images/img_gallery05.jpeg");
+}
+
 h1 {
     color: green;
     text-align: center;
@@ -40,8 +45,49 @@ h1 {
 
 #vending_machine {
     margin-left: 250px;
-    width: 1200px;
+    margin-top: 50px;
+    width: 1100px;
 }
+
+#btnAdiv {
+    position:absolute;
+    top: 420px;
+    left: 310px;
+    display:flex;
+}
+#postA {
+    font-size: 33px;
+    color: white;
+    background-color: #b9000e;
+    border-radius: 100vh;
+    border: 6px outset #b9000e;
+}
+#postA:active {
+	-webkit-transform: translate(0,2px);
+	-moz-transform: translate(0,2px);
+	transform: translate(0,2px);
+	border-bottom:none;
+	}
+
+#btnBdiv {
+    position: absolute;
+    top: 420px;
+    left: 782px;
+    display:flex;
+}
+#postB {
+    font-size: 33px;
+    color: white;
+    background-color: #b9000e;
+    border-radius: 100vh;
+    border: 6px outset #b9000e;
+}
+#postB:active {
+    -webkit-transform: translate(0,2px);
+    -moz-transform: translate(0,2px);
+    transform: translate(0,2px);
+    border-bottom:none;
+    }
 
 .drinks {
     width: 77px;
