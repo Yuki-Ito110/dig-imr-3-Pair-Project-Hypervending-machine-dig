@@ -4,9 +4,9 @@
 
 async function getPokemon () {
     const response = await axios.get("https://pokeapi.co/api/v2/pokemon/25");
-    console.log(response.data.sprites.other["official-artwork"].front_default);
+    return response.data.sprites.other["official-artwork"].front_default;
 }
-getPokemon();
+console.log(getPokemon());
 
 window.addEventListener('load', () => {
     const containerEl = document.querySelector('#boughtBox');
@@ -27,11 +27,14 @@ window.addEventListener('load', () => {
         containerEl.append(postEl);
     }
 
+
     let postb = document.getElementById('postb');
     postb.addEventListener('click', function() {
+
+        getPokemon().then((url) => postImg(url));
         
         console.log('postがクリックされました！');
-        postImg("./images/コーラ.jpg");
+        // postImg("./images/コーラ.jpg");
 
 
     },false);
