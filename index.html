@@ -11,23 +11,23 @@
 </head>
 
 <body>
-  <!-- <h1>ハイパーベンディングマシーン</h1> -->
+  <!-- 画像部分-->
   <div id = "vending_machine_div">
     <img src="./images/vending_machine.png" id = "vending_machine">
     <div id="btnAdiv"><button id="btnA">PUSH</button></div>
     <div id="btnBdiv"><button id="btnB">PUSH</button></div>
+    <div id="outDivA"></div>
+    <div id="outDivB"></div>
   </div>
-  <!-- <script type="text/javascript">
-    window.onload = function() {
-        var my_audio = new Audio("vending_sound");
-    
-            document.getElementById("btn20200502").onclick = function() {
-                my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
-                my_audio.play();  //サウンドを再生
-            }
-    }
-</script> -->
-  <!-- <img src="./images/コーラ.jpg" id = "coke"> -->
+  
+  <!-- ポップアップ部分-->
+  <div id="popup" class="popup">
+    <div class="popup-inner">
+      <div id="close-btn" class="close-btn">✖</div>
+      <div class="img"><img id="popupImg" src="./images/greenroad.jpeg" alt="ポップアップ画像"></div>
+    </div><!-- .popup-inner -->
+    <div id="bg-black" class="bg-black"></div>
+  </div><!-- #popup -->
   <div id = boughtBox></div>
 </body>
 
