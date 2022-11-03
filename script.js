@@ -23,6 +23,7 @@ async function getPokemon () {
     return response.data.sprites.other["official-artwork"].front_default;
 }
 
+let pid = 1;//
 window.addEventListener('load', () => {
     function postImg(toAppendId, imageURL, imgClassName, divId) {
         const containerEl = document.querySelector(toAppendId);
@@ -33,7 +34,10 @@ window.addEventListener('load', () => {
             postEl.id = divId;
         }
         postEl.className = 'drink';
-        
+
+        const id = "p" + pid;//    
+        postEl.classList.add(id);//        
+
         // 画像のimage作成
         const imageEl = document.createElement('img');
         imageEl.className = imgClassName;
@@ -43,7 +47,26 @@ window.addEventListener('load', () => {
         postEl.append(imageEl);
         
         containerEl.append(postEl);
+        postEl.addEventListener("dragstart", (e) =>{
+            console.log("dragstart");
+            e.dataTransfer.setData("choicePokemon", id);
+        });
+        pid++;
     }
+    
+    // ゴミ箱DOM
+    const dust = document.getElementById("dust");
+    dust.addEventListener("dragover", (e) =>{
+        e.preventDefault();
+        console.log("dragover");
+        e.dataTransfer.dropEffect = "copy";
+    });
+    dust.addEventListener("drop", (e) => {
+        e.preventDefault();
+        let p = e.dataTransfer.getData("choicePokemon");
+        console.log(p);
+        document.querySelectorAll("." + p)[0].remove();
+    });
 
     // ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊赤い自販機のボタンが押された時＊＊＊＊＊＊＊＊＊＊＊＊＊＊
     let btnA = document.getElementById('btnA');
