@@ -1,7 +1,5 @@
 # dig-imr-3-Pair-Project-Hypervending-machine-dig
 
-image or gif
-
 ## 概要
 
 -
@@ -20,9 +18,10 @@ image or gif
 
 ## 参考
 
-- [twitter](https://twitter.com/Kotabrog)
+- [ポケモン API](https://pokeapi.co/)
+- [ニコニ・コモンズ](https://commons.nicovideo.jp/)
 
-## チーム
+## 仲良しペアチーム紹介
 
-- 自販機補充員-月収は 20 ～ 30 万円
+- ペア名：自動販売機補充員　月収は 20 ～ 30 万円
 - ユーキさんとばら

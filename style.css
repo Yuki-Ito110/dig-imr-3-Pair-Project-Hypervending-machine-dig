@@ -31,7 +31,7 @@
     /*ここから*/
 Body {
     background-size:cover;
-    background-image: url("./images/img_gallery05.jpeg");
+    background-image: url("./images/ポケモン草むら.jpeg");
 }
 
 h1 {
@@ -55,14 +55,14 @@ h1 {
     left: 310px;
     display:flex;
 }
-#postA {
+#btnA {
     font-size: 33px;
     color: white;
     background-color: #b9000e;
     border-radius: 100vh;
     border: 6px outset #b9000e;
 }
-#postA:active {
+#btnA:active {
 	-webkit-transform: translate(0,2px);
 	-moz-transform: translate(0,2px);
 	transform: translate(0,2px);
@@ -75,22 +75,29 @@ h1 {
     left: 782px;
     display:flex;
 }
-#postB {
+#btnB {
     font-size: 33px;
     color: white;
     background-color: #b9000e;
     border-radius: 100vh;
     border: 6px outset #b9000e;
 }
-#postB:active {
+#btnB:active {
     -webkit-transform: translate(0,2px);
     -moz-transform: translate(0,2px);
     transform: translate(0,2px);
     border-bottom:none;
     }
 
+.questionImgA {
+    position:absolute;
+    top: 510px;
+    left: 420px;
+    width: 29px;
+}
+
 .drinks {
-    width: 77px;
+    width: 130px;
 }
 
 .drink {
