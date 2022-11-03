@@ -48,7 +48,7 @@ window.addEventListener('load', () => {
     // ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊赤い自販機のボタンが押された時＊＊＊＊＊＊＊＊＊＊＊＊＊＊
     let btnA = document.getElementById('btnA');
     let flagA = true; //取り出し口が空の時true
-    let my_audio = new Audio("./sounds/vending_sound.mp3");
+    let my_audio = new Audio("./sounds/ゴミ捨て.mp3");
     btnA.addEventListener('click', function() {
         if(flagA) {
             postImg("#vending_machine_div", "images/黒缶.png", "questionImgA", "questionDivA");
@@ -58,9 +58,8 @@ window.addEventListener('load', () => {
         }
     },false);
 
-    let btnAout = document.getElementById('outDivA');
     let n = 0;
-    btnAout.addEventListener('click', function() {
+    document.getElementById('outDivA').addEventListener('click', function() {
         if(!flagA) {
             document.getElementById("questionDivA").remove();
             document.getElementById("popupImg").src = drinkArr[n];
@@ -84,15 +83,18 @@ window.addEventListener('load', () => {
             flagB = false                
             my_audio.currentTime = 0;  //再生開始位置を先頭に戻す
             my_audio.play();  //サウンドを再生
+            getPokemon().then(url => document.getElementById("popupImg").src = url);
         }
     },false);
 
-    // let btnB = document.getElementById('btnB');
-    // btnB.addEventListener('click', function() {
-    //     getPokemon().then((url) => postImg('#boughtBox', url, "pokemons"));
-    //     console.log('btnBがクリックされました！');
-    // },false);
-    
+    document.getElementById('outDivB').addEventListener('click', function() {
+        if(!flagB) {
+            document.getElementById("questionDivB").remove();
+            document.getElementById('popup').classList.toggle('is-show');
+            postImg('#boughtBox', document.getElementById("popupImg").src, "pokemons")
+            flagB = true;
+        }
+    },false)    
 });
 
 // ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊ポップアップのセッティング処理(消す処理)＊＊＊＊＊＊＊＊＊＊＊＊＊＊

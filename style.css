@@ -114,6 +114,15 @@ h1 {
     z-index: 29;
 }
 
+#outDivB {
+    position:absolute;
+    top: 510px;
+    left: 870px;
+    width: 77px;
+    height: 54px;
+    z-index: 29;
+}
+
 .drinks {
     width: 77px;
 }
