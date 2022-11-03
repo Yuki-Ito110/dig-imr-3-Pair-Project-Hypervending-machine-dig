@@ -53,7 +53,7 @@ window.addEventListener('load', () => {
         });
         pid++;
     }
-    
+
     // ゴミ箱DOM
     const dust = document.getElementById("dust");
     dust.addEventListener("dragover", (e) =>{
@@ -61,18 +61,21 @@ window.addEventListener('load', () => {
         console.log("dragover");
         e.dataTransfer.dropEffect = "copy";
     });
+
+    const throwAwayAudio = new Audio("./sounds/ゴミ捨て.mp3");
     dust.addEventListener("drop", (e) => {
         e.preventDefault();
         let p = e.dataTransfer.getData("choicePokemon");
         console.log(p);
         document.querySelectorAll("." + p)[0].remove();
+        throwAwayAudio.currentTime = 0;  //再生開始位置を先頭に戻す
+        throwAwayAudio.play();  //サウンドを再生
     });
 
     // ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊赤い自販機のボタンが押された時＊＊＊＊＊＊＊＊＊＊＊＊＊＊
-    let btnA = document.getElementById('btnA');
     let flagA = true; //取り出し口が空の時true
-    let my_audio = new Audio("./sounds/ゴミ捨て.mp3");
-    btnA.addEventListener('click', function() {
+    const my_audio = new Audio("./sounds/自販機でジュースを購入する音.mp3");
+    document.getElementById('btnA').addEventListener('click', function() {
         if(flagA) {
             postImg("#vending_machine_div", "images/黒缶.png", "questionImgA", "questionDivA");
             flagA = false                
@@ -82,6 +85,7 @@ window.addEventListener('load', () => {
     },false);
 
     let n = 0;
+    const getDrinkAudio = new Audio("./sounds/宝発見.mp3")
     document.getElementById('outDivA').addEventListener('click', function() {
         if(!flagA) {
             document.getElementById("questionDivA").remove();
@@ -89,6 +93,8 @@ window.addEventListener('load', () => {
             document.getElementById('popup').classList.toggle('is-show');
             postImg('#boughtBox', drinkArr[n], "drinks")
             n < drinkArr.length - 1 ? n++ : n = 0;
+            getDrinkAudio.currentTime = 0;  //再生開始位置を先頭に戻す
+            getDrinkAudio.play();  //サウンドを再生
             flagA = true;
         }
     },false)
@@ -110,10 +116,13 @@ window.addEventListener('load', () => {
         }
     },false);
 
+    const getPokemonAudio = new Audio("./sounds/レベルアップ.wav");
     document.getElementById('outDivB').addEventListener('click', function() {
         if(!flagB) {
             document.getElementById("questionDivB").remove();
             document.getElementById('popup').classList.toggle('is-show');
+            getPokemonAudio.currentTime = 0;
+            getPokemonAudio.play();           
             postImg('#boughtBox', document.getElementById("popupImg").src, "pokemons")
             flagB = true;
         }
